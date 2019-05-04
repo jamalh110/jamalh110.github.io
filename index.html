@@ -1,62 +1,57 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
-  <title>Shiro</title>
-  <meta name="description" content="Shiro">
+  <title>About</title>
+  <meta name="description" content="Intro to Shiro">
   <meta name="author" content="Shiro">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-  <link rel="icon" 
-      type="image/png" 
-      href="logo.png" />
+  <link rel="stylesheet" href="about.css">
+
 </head>
-
 <body>
+<div style = "text-align: center">
+<br>
+<img src="logo.png" style = "max-height:100px;display: inline-block">
+<br>
+<br>
+<br>
+<img src="Animation_1.png" style = "max-height:100px;display: none" id = "img1">
+<br>
+<img src="Animation_2.png" style = "max-height:71px;display: none" id="img2">
+<br>
+<img src="Animation_2.5.png" style = "max-height:65px;display: none" id = "img25">
+<br>
+<img src="Animation_3.png" style = "max-height:133px;display: none" id = "img3">
+<br>
+<br>
+<br>
 
-    <div style="text-align:center;padding-top: 10%">
-    <img src="logo.png" style="text-align:center" width="225px">
-    </div>
-    <p id="text" style="font-family:'Minion Pro Display';font-size: 65px;text-align: center;color: #484848">Growing soon.</p>
-    <p id="countdown" style="font-family:'Courier New', Courier, monospace; font-size:25px; text-align: center"></p>
+</div>
 
-    <script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("May 3, 2019 21:00:00").getTime();
-    
-    // Update the count down every 1 second
-    let func = function() {
-      // Get todays date and time
-      var now = new Date().getTime();
-    
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-    
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-      // Display the result in the element with id="demo"
-      if(hours===1){
-        document.getElementById("countdown").innerHTML = days + " days " + hours + " hour "
-      + minutes + " minutes " + seconds + " seconds ";
-      }
-      else{
-      document.getElementById("countdown").innerHTML = days + " days " + hours + " hours "
-      + minutes + " minutes " + seconds + " seconds ";
-      }
-      // If the count down is finished, write some text 
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "We will be up momentarily :)";
-      }
-    }
-    func()
-    var x = setInterval(func, 1000);
-    </script>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script>
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+
+$("#img1").fadeIn(3000, function (){
+    $("#img2").fadeIn(3000, function (){
+        $("#img25").fadeIn(3000, function (){
+            $("#img3").fadeIn(3000, function (){
+                sleep(5000).then(() => {
+                    window.location.replace("startpage.html")
+});
+})
+})
+})
+})
+</script>
+
 </html>
