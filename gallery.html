@@ -60,7 +60,7 @@
         const getData = async() => {
             queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
-            personData = await d3.json("http://odyssee.shiro.community/:3005/api/data?email=" + urlParams.get("email") + "&key=" + urlParams.get("key"));
+            personData = await d3.json("http://odyssee.shiro.community:3005/api/data?email=" + urlParams.get("email") + "&key=" + urlParams.get("key"));
             //personData = await d3.json("http://localhost:4000/api/data?email=" + urlParams.get("email") + "&key=" + urlParams.get("key"));
             var everyoneData = await d3.json("/answerAnon.json");
             //var everyoneData = null;
